@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-b301e1d8","path":"/tag/wwi/","title":"tag > WWI","lang":"zh_CN","frontmatter":{"title":"tag > WWI","key":"WWI","layout":"Tag","sidebar":false},"headers":[],"git":{},"filePathRelative":null}');export{t as data};
