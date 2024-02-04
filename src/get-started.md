@@ -1,6 +1,6 @@
-# Get Started
+# 开始
 
-This is a normal page, which contains VuePress basics.
+这是我的开发博客，记录一些日常使用的技巧与项目经验。
 
 ## Pages
 
