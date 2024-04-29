@@ -10,7 +10,7 @@ export default defineUserConfig({
   description: '记录开发中的技术与解决方案',
 
   theme: defaultTheme({
-    logo: 'https://vuejs.press/images/hero.png',
+    logo: '/images/logo.jpg',
 
     navbar: [
       '/',
@@ -55,7 +55,9 @@ export default defineUserConfig({
         {
           key: 'article',
           // remove archive articles
-          filter: (page) => !page.frontmatter.archive,
+          filter: (page) => {
+            return !page.frontmatter.archive
+          },
 
           sorter: (pageA, pageB) => {
             if (pageA.frontmatter.sticky && pageB.frontmatter.sticky)

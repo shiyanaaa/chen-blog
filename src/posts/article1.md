@@ -4,7 +4,7 @@ category:
   - SpringBoot
 tag:
   - SpringBoot
-  - 权限控制
+  - Access
 ---
 
 # SpringBoot 自定义权限管理注解

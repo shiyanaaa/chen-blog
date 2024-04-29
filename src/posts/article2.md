@@ -1,13 +1,12 @@
 ---
 date: 2022-01-02
 category:
-  - CategoryA
+  - Vue
 tag:
-  - tag A
-  - tag B
+  - 技巧
 ---
 
-# Article 2
+# 右击菜单的封装
 
 ## Heading 2
 

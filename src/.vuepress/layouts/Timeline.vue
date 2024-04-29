@@ -15,7 +15,7 @@ const timelines = keys
   <ParentLayout>
     <template #page>
       <main class="page">
-        <h1 class="timeline-title">Timeline</h1>
+        <h1 class="timeline-title">历史文章</h1>
         <ArticleList :items="timelines" is-timeline />
       </main>
     </template>

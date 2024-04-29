@@ -1,29 +1,43 @@
 <script setup>
-import { map } from '@temp/blog/tag.js'
-import { usePageFrontmatter } from '@vuepress/client'
-import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
-import { computed } from 'vue'
-import { RouterLink, useRouter } from 'vue-router'
-import ArticleList from '../components/ArticleList.vue'
-
-const routes = useRouter().getRoutes()
-const frontmatter = usePageFrontmatter()
+import { map } from "@temp/blog/tag.js";
+import { usePageFrontmatter } from "@vuepress/client";
+import ParentLayout from "@vuepress/theme-default/layouts/Layout.vue";
+import { computed, onMounted } from "vue";
+import { RouterLink, useRouter, useRoute } from "vue-router";
+import ArticleList from "../components/ArticleList.vue";
+const router = useRouter();
+const routes = useRouter().getRoutes();
+const route = useRoute();
+const frontmatter = usePageFrontmatter();
 
 const tags = Object.entries(map).map(([name, { path, keys }]) => ({
   name,
   path,
   keys,
-}))
+}));
 
-const currentTag = computed(() => frontmatter.value.key)
+const currentTag = computed(() => frontmatter.value.key);
 
 const items = computed(() =>
   currentTag.value
     ? map[currentTag.value].keys
         .map((key) => routes.find(({ name }) => name === key))
         .map(({ path, meta }) => ({ path, info: meta }))
-    : [],
-)
+    : []
+);
+const className = computed(() => {
+  let str = decodeURI(route.fullPath);
+  let data = {};
+  tags.forEach((item) => {
+    data[item.path] = item.path === str ? "active" : "";
+  });
+  return data;
+});
+onMounted(() => {
+  if (!currentTag.value && tags.length !== 0) {
+    router.push(tags[0].path);
+  }
+});
 </script>
 
 <template>
@@ -36,6 +50,7 @@ const items = computed(() =>
             :key="name"
             :to="path"
             class="tag"
+            :class="className[path]"
           >
             {{ name }}
             <span class="tag-num">
@@ -50,7 +65,7 @@ const items = computed(() =>
 </template>
 
 <style lang="scss">
-@use '@vuepress/theme-default/styles/mixins';
+@use "@vuepress/theme-default/styles/mixins";
 
 .tag-wrapper {
   @include mixins.content_wrapper;
@@ -76,9 +91,7 @@ const items = computed(() =>
 
     cursor: pointer;
 
-    transition:
-      background 0.3s,
-      color 0.3s;
+    transition: background 0.3s, color 0.3s;
 
     @media (max-width: 419px) {
       font-size: 0.9rem;
@@ -98,7 +111,8 @@ const items = computed(() =>
       text-align: center;
     }
 
-    &.router-link-active {
+    &.router-link-active,
+    &.active {
       background: var(--c-brand);
       color: var(--c-bg);
 

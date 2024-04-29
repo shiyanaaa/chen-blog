@@ -9,6 +9,7 @@ const routes = useRouter().getRoutes()
 const articles = keys
   .map((key) => routes.find(({ name }) => name === key))
   .map(({ path, meta }) => ({ path, info: meta }))
+  .filter(({path})=>/\/posts\/(.*).html$/g.test(path))
 </script>
 
 <template>

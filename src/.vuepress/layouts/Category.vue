@@ -2,11 +2,13 @@
 import { map } from '@temp/blog/category.js'
 import { usePageFrontmatter } from '@vuepress/client'
 import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
-import { computed } from 'vue'
-import { RouterLink, useRouter } from 'vue-router'
+import { computed,onMounted } from 'vue'
+import { RouterLink, useRouter,useRoute } from 'vue-router'
 import ArticleList from '../components/ArticleList.vue'
 
 const routes = useRouter().getRoutes()
+const route=useRoute()
+const router=useRouter()
 const frontmatter = usePageFrontmatter()
 
 const categories = Object.entries(map).map(([name, { path, keys }]) => ({
@@ -24,6 +26,19 @@ const items = computed(() =>
         .map(({ path, meta }) => ({ path, info: meta }))
     : [],
 )
+onMounted(()=>{
+  if(!currentCategory.value&&categories.length!==0){
+    router.push(categories[0].path)
+  }
+})
+const className = computed(() => {
+  let str = decodeURI(route.fullPath);
+  let data = {};
+  categories.forEach((item) => {
+    data[item.path] = item.path === str ? "active" : "";
+  });
+  return data;
+});
 </script>
 
 <template>
@@ -36,6 +51,7 @@ const items = computed(() =>
             :key="name"
             :to="path"
             class="category"
+            :class="className[path]"
           >
             {{ name }}
             <span class="category-num">
@@ -98,7 +114,7 @@ const items = computed(() =>
       text-align: center;
     }
 
-    &.router-link-active {
+    &.router-link-active,&.active {
       background: var(--c-brand);
       color: var(--c-bg);
 
