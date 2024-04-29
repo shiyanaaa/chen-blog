@@ -1,1 +1,0 @@
-const a=JSON.parse('{"key":"v-2962daa1","path":"/tag/wwii/","title":"tag > WWII","lang":"zh_CN","frontmatter":{"title":"tag > WWII","key":"WWII","layout":"Tag","sidebar":false},"headers":[],"git":{},"filePathRelative":null}');export{a as data};

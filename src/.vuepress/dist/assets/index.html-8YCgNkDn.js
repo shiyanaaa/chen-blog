@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-a4513d86","path":"/tag/access/","title":"tag > Access","lang":"zh_CN","frontmatter":{"title":"tag > Access","key":"Access","layout":"Tag","sidebar":false},"headers":[],"git":{},"filePathRelative":null}');export{a as data};

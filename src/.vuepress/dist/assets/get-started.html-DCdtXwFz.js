@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-6c0089f0","path":"/get-started.html","title":"开始","lang":"zh_CN","frontmatter":{},"headers":[{"level":2,"title":"简介","slug":"简介","link":"#简介","children":[]}],"git":{"updatedTime":1714375459000,"contributors":[{"name":"梁晨","email":"1161480992@qq.com","commits":3}]},"filePathRelative":"get-started.md"}');export{t as data};
