@@ -5,7 +5,7 @@ heroImage: /images/logo.jpg
 actions:
   -
     text: 开始
-    link: /getting-started.html
+    link: /get-started.html
     type: primary
 features:
   -
