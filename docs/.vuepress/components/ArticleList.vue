@@ -1,10 +1,11 @@
 <script setup>
-import {onMounted} from 'vue'
-const props=defineProps({
+defineProps({
+  /** Article items */
   items: {
     type: Array,
-    default: () => [],
+    required: true,
   },
+  /** Whether is timeline or not */
   isTimeline: Boolean,
 })
 </script>
@@ -12,6 +13,7 @@ const props=defineProps({
 <template>
   <div class="article-wrapper">
     <div v-if="!items.length">Nothing in here.</div>
+
     <article
       v-for="{ info, path } in items"
       :key="path"
@@ -24,17 +26,23 @@ const props=defineProps({
           info.title
         }}
       </header>
+
       <hr />
+
       <div class="article-info">
         <span v-if="info.author" class="author">Author: {{ info.author }}</span>
+
         <span v-if="info.date && !isTimeline" class="date"
-          >日期: {{ new Date(info.date).toLocaleDateString() }}</span
+          >Date: {{ new Date(info.date).toLocaleDateString() }}</span
         >
+
         <span v-if="info.category" class="category"
-          >分类: {{ info.category.join(', ') }}</span
+          >Category: {{ info.category.join(', ') }}</span
         >
-        <span v-if="info.tag" class="tag">标签: {{ info.tag.join(', ') }}</span>
+
+        <span v-if="info.tag" class="tag">Tag: {{ info.tag.join(', ') }}</span>
       </div>
+
       <div v-if="info.excerpt" class="excerpt" v-html="info.excerpt" />
     </article>
   </div>

@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-0667aa78","path":"/category/springboot/","title":"category > SpringBoot","lang":"zh_CN","frontmatter":{"title":"category > SpringBoot","key":"SpringBoot","layout":"Category","sidebar":false},"headers":[],"git":{},"filePathRelative":null}');export{t as data};

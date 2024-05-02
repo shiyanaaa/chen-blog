@@ -1,44 +1,11 @@
 <script setup>
-import { map } from '@temp/blog/category.js'
-import { usePageFrontmatter } from '@vuepress/client'
+import { useBlogCategory } from '@vuepress/plugin-blog/client'
 import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
-import { computed,onMounted } from 'vue'
-import { RouterLink, useRouter,useRoute } from 'vue-router'
+import { RouteLink, useRoute } from 'vuepress/client'
 import ArticleList from '../components/ArticleList.vue'
 
-const routes = useRouter().getRoutes()
-const route=useRoute()
-const router=useRouter()
-const frontmatter = usePageFrontmatter()
-
-const categories = Object.entries(map).map(([name, { path, keys }]) => ({
-  name,
-  path,
-  keys,
-}))
-
-const currentCategory = computed(() => frontmatter.value.key)
-
-const items = computed(() =>
-  currentCategory.value
-    ? map[currentCategory.value].keys
-        .map((key) => routes.find(({ name }) => name === key))
-        .map(({ path, meta }) => ({ path, info: meta }))
-    : [],
-)
-onMounted(()=>{
-  if(!currentCategory.value&&categories.length!==0){
-    router.push(categories[0].path)
-  }
-})
-const className = computed(() => {
-  let str = decodeURI(route.fullPath);
-  let data = {};
-  categories.forEach((item) => {
-    data[item.path] = item.path === str ? "active" : "";
-  });
-  return data;
-});
+const route = useRoute()
+const categoryMap = useBlogCategory('category')
 </script>
 
 <template>
@@ -46,20 +13,21 @@ const className = computed(() => {
     <template #page>
       <main class="page">
         <div class="category-wrapper">
-          <RouterLink
-            v-for="{ name, path, keys } in categories"
+          <RouteLink
+            v-for="({ items, path }, name) in categoryMap.map"
             :key="name"
             :to="path"
+            :active="route.path === path"
             class="category"
-            :class="className[path]"
           >
             {{ name }}
             <span class="category-num">
-              {{ keys.length }}
+              {{ items.length }}
             </span>
-          </RouterLink>
+          </RouteLink>
         </div>
-        <ArticleList :items="items" />
+
+        <ArticleList :items="categoryMap.currentItems ?? []" />
       </main>
     </template>
   </ParentLayout>
@@ -114,7 +82,7 @@ const className = computed(() => {
       text-align: center;
     }
 
-    &.router-link-active,&.active {
+    &.route-link-active {
       background: var(--c-brand);
       color: var(--c-bg);
 
