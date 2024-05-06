@@ -3,4 +3,5 @@ node_modules/
 /.vuepress/.temp/
 /docs/.vuepress/.cache/
 /docs/.vuepress/.temp/
-/docs/.vuepress/dist/
+/docs/.vuepress/dist/*
+!/docs/.vuepress/dist/.gitignore
