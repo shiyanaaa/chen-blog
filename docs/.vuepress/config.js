@@ -10,7 +10,7 @@ export default defineUserConfig({
   description: '欢迎来到阿晨的博客',
 
   theme: defaultTheme({
-    logo: 'https://vuejs.press/images/hero.png',
+    logo: '/images/logo.jpg',
 
     navbar: [
       '/',

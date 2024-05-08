@@ -1,52 +1,26 @@
 ---
-title: get-started
-author:
+title: 开始
+author: 梁晨
 createTime: 2024/05/02 13:52:28
 permalink: /article/4ypjn7cs/
 ---
-# Get Started
 
-This is a normal page, which contains VuePress basics.
+# 开始
 
-## Pages
+博客主要用途是存放一些我的学习笔记、一些案例，分享一下我的学习经验，记录一下日常工作中开发遇到的问题以及解决方案。。
 
-You can add markdown files in your vuepress directory, every markdown file will be converted to a page in your site.
+## 个人简介
 
-See [routing][] for more details.
+姓名：梁晨
 
-## Content
+出生：1998 年 10 月
 
-Every markdown file [will be rendered to HTML, then converted to a Vue SFC][content].
+自我说明：一个前端开发工程师，后端也可以写，经常自己学习一些新技术与算法。
 
-VuePress support basic markdown syntax and [some extensions][synatex-extensions], you can also [use Vue features][vue-feature] in it.
+## 技术栈
 
-## Configuration
-
-VuePress use a `.vuepress/config.js`(or .ts) file as [site configuration][config], you can use it to config your site.
-
-For [client side configuration][client-config], you can create `.vuepress/client.js`(or .ts).
-
-Meanwhile, you can also add configuration per page with [frontmatter][].
-
-## Layouts and customization
-
-Here are common configuration controlling layout of `@vuepress/theme-default`:
-
-- [navbar][]
-- [sidebar][]
-
-Check [default theme docs][default-theme] for full reference.
-
-You can [add extra style][style] with `.vuepress/styles/index.scss` file.
-
-[routing]: https://vuejs.press/guide/page.html#routing
-[content]: https://vuejs.press/guide/page.html#content
-[synatex-extensions]: https://vuejs.press/guide/markdown.html#syntax-extensions
-[vue-feature]: https://vuejs.press/guide/markdown.html#using-vue-in-markdown
-[config]: https://vuejs.press/guide/configuration.html#client-config-file
-[client-config]: https://vuejs.press/guide/configuration.html#client-config-file
-[frontmatter]: https://vuejs.press/guide/page.html#frontmatter
-[navbar]: https://vuejs.press/reference/default-theme/config.html#navbar
-[sidebar]: https://vuejs.press/reference/default-theme/config.html#sidebar
-[default-theme]: https://vuejs.press/reference/default-theme/
-[style]: https://vuejs.press/reference/default-theme/styles.html#style-file
+| 类型 | 技术 |
+| ---- | ---- |
+| Language | ![JavaScript](https://img.shields.io/badge/-JavaScript-d3b72f?style=flat&logo=JavaScript&logoColor=white "JavaScript") ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=TypeScript&logoColor=white "TypeScript") ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=Node.js&logoColor=white "Node.js") ![PHP](https://img.shields.io/badge/-PHP-777BB4?style=flat&logo=php&logoColor=white "PHP") |
+| FrontEnd | ![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat&logo=Vue.js&logoColor=white "Vue.js") ![React.js](https://img.shields.io/badge/-React.js-087ea4?style=flat&logo=React&logoColor=white "React.js") ![Nuxt.js](https://img.shields.io/badge/-Nuxt.js-00C58E?style=flat&logo=Nuxt.js&logoColor=white "Nuxt.js") ![Sass](https://img.shields.io/badge/-Sass-CC6699?style=flat&logo=Sass&logoColor=white "Sass") ![Less](https://img.shields.io/badge/-Less-1D365D?style=flat&logo=Less&logoColor=white "Less") |
+| BackEnd | ![Mysql](https://img.shields.io/badge/-Mysql-4479A1?style=flat&logo=mysql&logoColor=white "Mysql") ![Redis](https://img.shields.io/badge/-Redis-DC382D?style=flat&logo=redis&logoColor=white "Redis") ![Nginx](https://img.shields.io/badge/-Nginx-269539?style=flat&logo=nginx&logoColor=white "Nginx") |
