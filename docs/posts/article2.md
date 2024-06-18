@@ -1,5 +1,5 @@
 ---
-date: 2022-01-02
+date: 2024-5-14
 category:
   - Vue
 tag:
@@ -16,6 +16,7 @@ tag:
 
 快速简单的实现一个右击菜单，经过思考，想到了ElementPlus中的`Cascader`级联选择器组件
 ![Cascader组件](/images/article2/Cascader.png)
+
 如果把顶部输入框与箭头隐藏，在右击时使用组件函数`togglePopperVisible`来调出下拉组件，不仅有下拉动画，而且还有边界判定防遮挡，并且二三级菜单也可以同时完成，且还有失焦自动收回，完美符合需求。
 
 ## 代码展示
@@ -115,5 +116,7 @@ defineExpose({ show });
 ## 效果展示
 
 ![Cascader组件](/images/article2/demo1.png)
+
 ![Cascader组件](/images/article2/demo2.png)
+
 ![Cascader组件](/images/article2/demo3.png)
