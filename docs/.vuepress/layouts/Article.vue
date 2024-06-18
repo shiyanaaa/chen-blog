@@ -15,3 +15,8 @@ const articles = useBlogType('article')
     </template>
   </ParentLayout>
 </template>
+<style>
+code{
+  background-color: transparent !important;
+}
+</style>
