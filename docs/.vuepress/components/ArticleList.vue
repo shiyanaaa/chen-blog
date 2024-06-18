@@ -33,14 +33,14 @@ defineProps({
         <span v-if="info.author" class="author">Author: {{ info.author }}</span>
 
         <span v-if="info.date && !isTimeline" class="date"
-          >Date: {{ new Date(info.date).toLocaleDateString() }}</span
+          >发布日期: {{ new Date(info.date).toLocaleDateString() }}</span
         >
 
         <span v-if="info.category" class="category"
-          >Category: {{ info.category.join(', ') }}</span
+          >分类: {{ info.category.join(', ') }}</span
         >
 
-        <span v-if="info.tag" class="tag">Tag: {{ info.tag.join(', ') }}</span>
+        <span v-if="info.tag" class="tag">标签: {{ info.tag.join(', ') }}</span>
       </div>
 
       <div v-if="info.excerpt" class="excerpt" v-html="info.excerpt" />
