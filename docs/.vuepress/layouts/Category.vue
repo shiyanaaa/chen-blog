@@ -1,11 +1,21 @@
 <script setup>
 import { useBlogCategory } from '@vuepress/plugin-blog/client'
 import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
-import { RouteLink, useRoute } from 'vuepress/client'
+import { RouteLink, useRoute,useRouter } from 'vuepress/client'
 import ArticleList from '../components/ArticleList.vue'
+import { onMounted } from 'vue';
 
 const route = useRoute()
+const router = useRouter()
 const categoryMap = useBlogCategory('category')
+onMounted(()=>{
+  if(route.fullPath==='/category/'||route.fullPath==='/category'){
+    console.log(categoryMap.value)
+    if(Object.keys(categoryMap.value.map).length>0){
+      router.push(Object.values(categoryMap.value.map)[0].path)
+    }
+  }
+})
 </script>
 
 <template>

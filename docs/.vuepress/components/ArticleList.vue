@@ -12,7 +12,7 @@ defineProps({
 
 <template>
   <div class="article-wrapper">
-    <div v-if="!items.length">Nothing in here.</div>
+    <div v-if="!items.length">选择标签查看文章</div>
 
     <article
       v-for="{ info, path } in items"
