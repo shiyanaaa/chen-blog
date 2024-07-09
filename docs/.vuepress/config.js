@@ -10,8 +10,8 @@ export default defineUserConfig({
   description: '欢迎来到阿晨的博客',
 
   theme: defaultTheme({
-    logo: '/images/logo.jpg',
-    logoDark:"/images/logo-dark.jpg",
+    logo: '/images/logo.png',
+    logoDark:"/images/logo-dark.png",
     navbar: [
       '/',
       {
