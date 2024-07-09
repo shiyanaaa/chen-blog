@@ -1,7 +1,7 @@
 ---
 home: true
 title: 首页
-heroImage: /images/logo.jpg
+heroImage: /images/logo.png
 actions:
   -
     text: 开始
