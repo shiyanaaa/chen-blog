@@ -10,7 +10,6 @@ const router = useRouter()
 const categoryMap = useBlogCategory('category')
 onMounted(()=>{
   if(route.fullPath==='/category/'||route.fullPath==='/category'){
-    console.log(categoryMap.value)
     if(Object.keys(categoryMap.value.map).length>0){
       router.push(Object.values(categoryMap.value.map)[0].path)
     }

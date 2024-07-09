@@ -3,9 +3,18 @@ import { useBlogCategory } from '@vuepress/plugin-blog/client'
 import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
 import { RouteLink, useRoute } from 'vuepress/client'
 import ArticleList from '../components/ArticleList.vue'
+import { onMounted } from 'vue';
 
 const route = useRoute()
+const router = useRouter()
 const tagMap = useBlogCategory('tag')
+onMounted(()=>{
+  if(route.fullPath==='/tag/'||route.fullPath==='/tag'){
+    if(Object.keys(tagMap.value.map).length>0){
+      router.push(Object.values(tagMap.value.map)[0].path)
+    }
+  }
+})
 </script>
 
 <template>
