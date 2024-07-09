@@ -11,7 +11,7 @@ export default defineUserConfig({
 
   theme: defaultTheme({
     logo: '/images/logo.jpg',
-
+    logoDark:"/images/logo-dark.jpg",
     navbar: [
       '/',
       {
