@@ -16,7 +16,7 @@ tag:
 ## 函数定义
 
 ```javascript
-const setDataHandle=(data, value, index: number, resolve, reject)=> {
+const setDataHandle=(data, value, index, resolve, reject)=> {
   requestIdleCallback((idle) => {
     if (index !== data.value.length) {
       reject(null);
