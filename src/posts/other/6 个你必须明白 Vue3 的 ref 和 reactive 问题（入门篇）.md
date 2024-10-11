@@ -23,7 +23,7 @@ API。
 ` reactive ` 方法用来创建响应式对象，它接收一个对象/数组参数，返回对象的响应式副本，当该对象的属性值发生变化，会自动更新使用该对象的地方。
 
 下面以分别以 **对象** 和 **数组** 作为参数演示：
-
+```js
     
     
     import { reactive } from 'vue'
@@ -37,9 +37,9 @@ API。
     let setReactiveArr = () => {
       reactiveArr[1] = 'Hello Chris1993';
     }
-
+```
 模版内容如下：
-
+```html
     
     
     <template>
@@ -53,7 +53,7 @@ API。
         <span @click="setReactiveArr">Update</span>
       </div>
     </template>
-
+```
 此时页面展示如下：
 
 当我们分别点击 ` Update ` 按钮后，可以看到数据变化后，视图上内容也一起更新了：
@@ -67,7 +67,7 @@ Symbol ` / ` Null ` / ` Undefined ` 。
 ` ref ` 的值在 JS/TS 中读取和修改时，需要使用 ` .value ` 获取，在模版中读取是，不需要使用 ` .value ` 。
 
 下面以分别以 **字符串** 和 **对象** 作为参数演示：
-
+```js
     
     
     import { ref } from 'vue'
@@ -80,9 +80,9 @@ Symbol ` / ` Null ` / ` Undefined ` 。
     let setRefObj = () => {
       refObj.value.name = 'Hello Chris1993';
     }
-
+```
 模版内容如下：
-
+```html
     
     
     <template>
@@ -96,7 +96,7 @@ Symbol ` / ` Null ` / ` Undefined ` 。
         <span @click="setRefObj">Update</span>
       </div>
     </template>
-
+```
 此时页面展示如下：
 
 当我们分别点击 ` Update ` 按钮后，可以看到数据变化后，视图内容也一起更新了：
@@ -106,7 +106,7 @@ Symbol ` / ` Null ` / ` Undefined ` 。
 答案是 **可以的** ， ` reactive ` 是基于 [ ES2015 Proxy API ]() 实现的，它的响应式是整个对象的所有嵌套层级。
 
 下面以分别以 **对象** 和 **数组** 作为参数演示：
-
+```js 
     
     
     import { reactive } from 'vue'
@@ -122,9 +122,9 @@ Symbol ` / ` Null ` / ` Undefined ` 。
     let setReactiveDeepArr = () => {
       reactiveDeepArr[1][1] = 'Hello Chris1993';
     }
-
+```
 模版内容如下：
-
+```html
     
     
     <template>
@@ -138,7 +138,7 @@ Symbol ` / ` Null ` / ` Undefined ` 。
         <span @click="setReactiveDeepArr">Update</span>
       </div>
     </template>
-
+```
 此时页面展示如下：
 
 当我们分别点击 ` Update ` 按钮后，可以看到数据变化后，视图上内容也一起更新了：
@@ -148,7 +148,7 @@ Symbol ` / ` Null ` / ` Undefined ` 。
 答案是 **不相等的** ，因为 ` reactive ` 是基于 [ ES2015 Proxy API ]() 实现的，返回结果是个 proxy 对象。
 
 测试代码：
-
+```js
     
     
     let reactiveSource = { name: 'Chris1993' };
@@ -162,19 +162,19 @@ Symbol ` / ` Null ` / ` Undefined ` 。
     
     console.log(reactiveData);
     // Reactive<{name: 'Chris1993'}>
-
+```
 ##  5\. TypeScript 如何写 ref 和 reactive 参数类型？
 
 在使用 TypeScript 写 ref / reactive 参数类型时，可以根据 ref / reactive 接口类型来实现具体的类型：
-
+```js
     
     
     function ref<T>(value: T): Ref<T>
     
     function reactive<T extends object>(target: T): UnwrapNestedRefs<T>
-
+```
 将前面实例代码改造一下：
-
+```js
     
     
     import { ref } from 'vue'
@@ -188,20 +188,20 @@ Symbol ` / ` Null ` / ` Undefined ` 。
     
     // reactive也类似
     let reactiveValue = reactive<{name: string}>({name: 'Chris1993'});
-
+```
 ##  6\. 把 ref 值作为 reactive 参数会怎么样？
 
 当我们已有一个 ` ref ` 对象，需要使用在 ` reactive ` 对象中，会发生什么呢？
 
 假设：
-
+```js
     
     
     let name = ref('Chris1993');
     let nameReactive = reactive({name})
-
+```
 我们可以做下列操作：
-
+```js
     
     
     let name = ref('Chris1993');
@@ -215,11 +215,11 @@ Symbol ` / ` Null ` / ` Undefined ` 。
     nameReactive.name = 'Hi Chris1993';
     console.log(name.value);        // Hi Chris1993
     console.log(nameReactive.name); // Hi Chris1993
-
+```
 这是因为 ` reactive ` 将会对所有深层的 ` refs ` 进行解包，并且保持 ` ref ` 的响应式。
 
 当通过赋值方式将 ` ref ` 分配给 ` reactive ` 属性时， ` ref ` 也会自动被解包：
-
+```js
     
     
     let name = ref('Chris1993');
@@ -229,7 +229,7 @@ Symbol ` / ` Null ` / ` Undefined ` 。
     console.log(name.value);        // Chris1993
     console.log(nameReactive.name); // Chris1993
     console.log(name.value === nameReactive.name); // true
-
+```
 ##  7\. 总结
 
 本文主要从入门角度和大家介绍 ` reactive ` / ` ref ` 两个 API 的使用方式区别，还有使用过程中的几个问题。

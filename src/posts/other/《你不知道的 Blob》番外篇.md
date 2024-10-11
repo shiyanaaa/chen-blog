@@ -80,7 +80,7 @@ Blob 构造函数语法为：
 ####  3.1 示例1：从字符串创建 Blob
 
     
-    
+ ``` js  
     let myBlobParts = ['<html><h2>Hello Leo</h2></html>']; // 一个包含DOMString的数组
     let myBlob = new Blob(myBlobParts, {type : 'text/html', endings: "transparent"}); // 得到 blob
     
@@ -88,7 +88,7 @@ Blob 构造函数语法为：
     // Output: 31 bytes size
     console.log(myBlob.type + " is the type");
     // Output: text/html is the type
-
+```
 [ ]()
 
 ####  3.2 示例2：从类型化数组和字符串创建 Blob
@@ -107,7 +107,7 @@ Array.isArray() ` 会返回 ` false ` 。
 
 由于 ` Blob ` 对象是不可改变的，但我们可以进行分割，并组装成一个新的 ` Blob ` 对象：
 
-    
+``` js
     
     let blob1 = new Blob(['<html><h2>Hello Leo</h2></html>'], 
        {type : 'text/html', endings: "transparent"});
@@ -125,7 +125,7 @@ Array.isArray() ` 会返回 ` false ` 。
        {type : 'text/html', endings: "transparent"});
     await newBlob.text();
     // currtent newBlob value: "<html><h2>Happy Leo</h2></html>"
-
+```
 ##  三、Blob 有哪些使用场景？
 
 ###  1\. 图片本地预览
@@ -135,7 +135,7 @@ Array.isArray() ` 会返回 ` false ` 。
   1. 使用 DataURL 方式； 
   2. 使用 Blob URL/Object URL 方式； 
 
-    
+``` html
     
     <body>
         <h1>1.DataURL方式：</h1>
@@ -169,7 +169,7 @@ Array.isArray() ` 会返回 ` false ` 。
             }
         </script>
     </body>
-
+```
   
 上面主要介绍 ` Blob URL ` 和 ` Data URL ` 两种方式实现图片本地预览，这两个类型的区别在 **《五、拓展》** 中介绍。  
 
@@ -184,7 +184,7 @@ reader ` 的 ` readAsDataURL ` 方法，将 ` file ` 对象转换为 ` dataURL `
 **实现分片上传：**  
 由于 File 是特殊类型的 Blob，可用于任意 Blob 类型的上下文，所以针对大文件传输，我们可以使用 ` slice `
 方法进行文件切割，分片上传。
-
+``` html
     
     
     <body>
@@ -221,9 +221,9 @@ reader ` 的 ` readAsDataURL ` 方法，将 ` file ` 对象转换为 ` dataURL `
             }
         </script>
     </body>
-
+```
 ###  3\. 图片本地预览 + 分片上传 + 暂停 + 续传
-
+``` html
     
     
     <body>
@@ -276,14 +276,14 @@ reader ` 的 ` readAsDataURL ` 方法，将 ` file ` 对象转换为 ` dataURL `
             }
         </script>
     </body>
-
+```
 ###  4\. 从互联网下载数据
 
 在实现“从互联网下载数据”方法时，我们使用 ` createObjectURL ` 显示图片，在请求互联网图片时，我们有两种方式：
 
   * 使用 ` XMLHttpRequest ` ； 
   * 使用 ` fetch ` ； 
-
+``` html
     
     
     <body>
@@ -317,11 +317,11 @@ reader ` 的 ` readAsDataURL ` 方法，将 ` file ` 对象转换为 ` dataURL `
             }
         </script>
     </body>
-
+```
 ###  5\. 下载文件
 
 通过调用 Blob 的构造函数来创建类型为 ` "text/plain" ` 的 Blob 对象，然后通过动态创建 ` a ` 标签来实现文件的下载。
-
+``` html
     
     
     <body>
@@ -343,7 +343,7 @@ reader ` 的 ` readAsDataURL ` 方法，将 ` file ` 对象转换为 ` dataURL `
             }
         </script>
     </body>
-
+```
 ###  6\. 图片压缩
 
 当我们希望本地图片在上传之前，先进行一定压缩，再提交，从而减少传输的数据量。  
@@ -352,7 +352,7 @@ reader ` 的 ` readAsDataURL ` 方法，将 ` file ` 对象转换为 ` dataURL `
 
   * ` type ` 表示 **图片格式** ，默认为 ` image/png ` ； 
   * ` encoderOptions ` 表示 **图片质量** ，在指定图片格式为 ` image/jpeg ` 或 ` image/webp ` 的情况下，可以从 0 到 1 区间内选择图片质量。如果超出取值范围，将会使用默认值 ` 0.92 ` ，其他参数会被忽略。 
-
+```html
     
     
     <body>
@@ -422,7 +422,7 @@ reader ` 的 ` readAsDataURL ` 方法，将 ` file ` 对象转换为 ` dataURL `
             };
         </script>
     </body>
-
+```
 其实 Canvas 对象除了提供 ` toDataURL() ` 方法之外，它还提供了一个 ` toBlob() ` 方法，该方法的语法如下：
 
     
@@ -435,7 +435,7 @@ callback ` 回调方法默认的第一个参数就是转换好的 ` blob ` 文�
 ###  7\. 生成 PDF 文档
 
 在浏览器端，利用一些现成的开源库，比如 jsPDF，我们也可以方便地生成 PDF 文档。
-
+```html
     
     
       <body>
@@ -452,9 +452,9 @@ callback ` 回调方法默认的第一个参数就是转换好的 ` blob ` 文�
           })();
         </script>
       </body>
-
+```
 其实 jsPDF 除了支持纯文本之外，它也可以生成带图片的 PDF 文档，比如：
-
+``` js
     
     
     let imgData = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/...'
@@ -463,7 +463,7 @@ callback ` 回调方法默认的第一个参数就是转换好的 ` blob ` 文�
     doc.setFontSize(40);
     doc.text(35, 25, 'Paranyan loves jsPDF');
     doc.addImage(imgData, 'JPEG', 15, 40, 180, 160);
-
+```
 ##  四、Blob 与 ArrayBuffer 有何区别？
 
 ###  1\. 定义区别
@@ -485,16 +485,16 @@ ArrayBuffer ` 相比 ` Blob ` 更接近真实的二进制，更底层。
 ####  2.1 ArrayBuffer 转 Blob
 
 只需将 ` ArrayBuffer ` 作为参数传入即可：
-
+```js
     
     
     const buffer = new ArrayBuffer(16);
     const blob = new Blob([buffer]);
-
+```
 ####  2.2 Blob 转 ArrayBuffer
 
 需要借助 ` FileReader ` 对象：
-
+```js
     
     
     const blob = new Blob([1,2,3,4,5]);
@@ -504,7 +504,7 @@ ArrayBuffer ` 相比 ` Blob ` 更接近真实的二进制，更底层。
         console.log(this.result);
     }
     reader.readAsArrayBuffer(blob);
-
+```
 ###  3\. 其他区别
 
   1. 需要使用写入/编辑操作时使用 ArrayBuffer，否则使用 Blob 即可； 
@@ -512,7 +512,7 @@ ArrayBuffer ` 相比 ` Blob ` 更接近真实的二进制，更底层。
   3. Blob 可以位于磁盘、高速缓存内存和其他不同用位置，而 ArrayBuffer 存在内存中，可以直接操作； 
 
 ###  4\. Ajax 中使用 Blob 和 ArrayBuffer
-
+```js
     
     
     function GET(url, callback) {
@@ -529,7 +529,7 @@ ArrayBuffer ` 相比 ` Blob ` 更接近真实的二进制，更底层。
         callback(new Uint8Array(xhr.response)); // or new Blob([xhr.response]);
       };
     }
-
+```
 ##  五、拓展
 
 ###  1\. Blob URL 和 Data URL 区别

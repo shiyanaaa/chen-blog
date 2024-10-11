@@ -18,14 +18,14 @@ tag:
 ####  ` v-cloak `
 
 ` v-cloak ` 不需要表达式，它会在Vue实例结束编译时从绑定的HTML元素上移除，经常和CSS的 ` display: none; ` 配合使用：
-
+```js
     
     
     <div id="app" v-cloak>
         {{message}}
     </div>
     
-
+```
 当网速较慢、Vue.js文件还没加载完时，在页面上会显示 ` {{message}} `
 的字样，直到Vue创建实例、编译模板时，DOM才会被替换，所以这个过程屏幕有闪。只要加一句CSS就可以解决这个问题：
 
@@ -70,12 +70,12 @@ title="条件渲染指令" class="codepen">See the Pen [ 条件渲染指令 ]() 
 <input> ` 元素被复用了。
 
 使用Vue.js提供的 ` key ` 属性，可以让你自己决定是否要复用元素， ` key ` 的值必须是唯一的。
-
+```js
     
     
     <input type="text" placeholder="输入用户名" key="name-input">
     
-
+```
 给两个 ` <input> ` 元素都增加了 ` key ` 后，就不会复用了。切换类型时键入的内容也会被删除，不过 ` <label> `
 元素仍然会被复用，因为没有添加 ` key ` 属性。
 
@@ -106,19 +106,19 @@ title="条件渲染指令" class="codepen">See the Pen [ 条件渲染指令 ]() 
 items ` 的形式。
 
 列表渲染也支持用 ` of ` 代替 ` in ` 作为分隔符，它更接近JavaScript迭代器的语法：
-
+```js
     
     
     <li v-for="book of books">{{book.name}}</li>
     
-
+```
 ` v-for ` 的表达式支持一个可选参数作为当前项的索引。
-
+```js
     
     
     <li v-for="(book,index) of books">{{index}} - {{book.name}}</li>
     
-
+```
 分隔符 ` in ` 前的语句使用括号，第二项就是 ` books ` 当前项的索引。
 
 与 ` v-if ` 一样， ` v-for ` 也可以用在内置标签 ` <template> ` 上，将多个元素进行渲染。
@@ -126,7 +126,7 @@ items ` 的形式。
 除了数组外，对象的属性也是可以遍历的。
 
 遍历对象属性时，有两个可选参数，分别是键名和索引：
-
+```js
     
     
     <div id="app">
@@ -137,16 +137,16 @@ items ` 的形式。
         </ul>
     </div>
     
-
+```
 ` v-for ` 还可以迭代整数：
-
+```js
     
     
     <div id="app">
         <span v-for="n in 10">{{n}}</span>
     </div>
     
-
+```
 ###  数组更新
 
 Vue的核心是数据与视图的双向绑定，包含了一组观察数组变化的方法，使用它们改变数组也会触发视图更新：

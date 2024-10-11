@@ -122,13 +122,13 @@ tag:
 Animate.css 配合时会非常有用：
 
     
-    
+``` html
     <div v-show="ok" class="animated" transition="bounce">Watch me bounce</div>
     Vue.transition('bounce', {
      enterClass: 'bounceInLeft',
      leaveClass: 'bounceOutRight'
     })
-
+```
 显式声明 CSS 过渡类型
 
 **1.0.14 新增**
@@ -148,7 +148,7 @@ animation，同时该元素在鼠标悬浮时又有 CSS transition 效果。这�
 
 **过渡流程详解**
 
-当 show 属性改变时，Vue.js 将相应地插入或删除 <div> 元素，按照如下规则改变过渡的 CSS 类名：
+当 show 属性改变时，Vue.js 将相应地插入或删除 `<div>` 元素，按照如下规则改变过渡的 CSS 类名：
 
   * 如果 show 变为 false，Vue.js 将： 
 
@@ -202,7 +202,7 @@ CSS 动画用法同 CSS 过渡，区别是在动画中 v-enter 类名在节点�
 
 示例： (省略了兼容性前缀)
 
-    
+``` html
     
     <span v-show="show" transition="bounce">Look at me!</span>
     
@@ -237,7 +237,7 @@ CSS 动画用法同 CSS 过渡，区别是在动画中 v-enter 类名在节点�
      transform: scale(0);
      }
     }
-
+```
 ###  JavaScript 过渡
 
 也可以只使用 JavaScript 钩子，不用定义任何 CSS 规则。当只使用 JavaScript 过渡时，enter 和 leave 钩子需要调用

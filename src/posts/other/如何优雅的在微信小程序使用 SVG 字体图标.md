@@ -38,9 +38,9 @@ iconfont ]() 上。
         //at.alicdn.com/t/font_8d5l8fzk5b87iudi.css
 
   * 第二步：挑选相应图标并获取类名，应用于页面： 
-    
+```html
         <i class="iconfont icon-xxx"></i>
-
+```
 ####  多色图标的使用
 
 多色图标使用起来也很简单（以 symbol 引用为例），只需要 3 个步骤：
@@ -50,7 +50,7 @@ iconfont ]() 上。
         //at.alicdn.com/t/font_8d5l8fzk5b87iudi.js
 
   * 第二步：加入通用css代码（引入一次就行）： 
-    
+```html
         <style type="text/css">
       .icon {
          width: 1em; height: 1em;
@@ -59,13 +59,13 @@ iconfont ]() 上。
          overflow: hidden;
       }
     </style>
-
+```
   * 第三步：挑选相应图标并获取类名，应用于页面： 
-    
-        <svg class="icon" aria-hidden="true">
+```html
+    <svg class="icon" aria-hidden="true">
       <use xlink:href="#icon-xxx"></use>
     </svg>
-
+```
 这两种图标在使用上都非常方便，那大家是不是会好奇，我们写本文的目的？
 
 原因是， **微信小程序上不支持 SVG 字体图标！😔 而多色图标，是需要借助 SVG 标签来实现。**
@@ -139,7 +139,7 @@ iconfont ]() 上。
 ###  使用字体图标
 
 我们将前面修改后的文件改名为 ` icon.scss ` 并引入到项目：
-
+```html
     
     
     // app.scss
@@ -158,7 +158,7 @@ iconfont ]() 上。
       <View className='path5'></View>
       <View className='path6'></View>
     </View>
-
+```
 最后效果如下：
 
 ###  踩坑记录
@@ -186,7 +186,7 @@ iconfont ]() 上。
 ###  抽取组件
 
 考虑到复用性，我将这些抽成一个 ` exe-svg-icon ` 组件：
-
+```js
     
     
     import Taro from '@tarojs/taro';
@@ -215,7 +215,7 @@ iconfont ]() 上。
     }
     export default EXESvgIcon;
     
-
+```
 到这边，方案一实现完成。
 
 ##  四、方案二：借助第三方库实现
@@ -302,7 +302,7 @@ README.md ]() 。
 ###  使用字体图标
 
 按照文档使用方法，使用的时候，只需要引入 ` IconFont ` 组件，通过 ` name ` 名称来选择对应图标即可：
-
+```html
     
     
     // 省略其他代码
@@ -332,7 +332,7 @@ README.md ]() 。
       <Text>Hello</text>
       <IconFont name="alipay" />
     </View>
-
+```
 ###  踩坑记录
 
   1. 字体大小设置问题 
