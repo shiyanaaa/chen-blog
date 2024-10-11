@@ -35,7 +35,7 @@ headers= {
   'Accept-Language': 'zh-CN,zh;q=0.9',
   'Cache-Control': 'no-cache',
   'Connection': 'keep-alive',
-  'Cookie': 'acw_tc=2760821e17286274486064279ea74f0f3b70e9b2aebd27dbf46d26b0a7e105; SHARESESSID=03796010c449809c20d980a4bc7cf9da; PHPSESSID=8b1527be4df94396ea080a042af133a0; Hm_lvt_e23800c454aa573c0ccb16b52665ac26=1728627449; Hm_lpvt_e23800c454aa573c0ccb16b52665ac26=1728627449; HMACCOUNT=818561313C1512DB; _ga_MJYFRXB3ZX=GS1.1.1728627449.1.0.1728627449.0.0.0; _ga=GA1.1.1341766831.1728627450; ssxmod_itna=eu0=qAxfEGCDOKDXDyx3qYK7tDOGczDCOYjGTRBxD5Dkz3iiWaxIEibrPPGXxPoDSxD=D6D7YDtohAQD0Ygru538fi2tfnGfGauz2lta2wzLYTCiTeqS1BgqoDU4i8DCwKlxjmDYYmDt4DIDAYDDxDWDYESDGtdDG=D7E0P1l2qxi3DbhbDmkt=RmTD0R+4VLTD4qDBe8tDKTqek4Dl8SFc7hNFBeD+ILTdzpr8SpG4x0t=DBdPFUE4HpOvk8RzdID=ygNDzwkDtMrTHlciijbYce3e9gxemB=1U8D8KipKiAo87gZ5SfPkGvviqYiDS=q1QhvAiDDp4n4CAhDD=; ssxmod_itna2=eu0=qAxfEGCDOKDXDyx3qYK7tDOGczDCOYjGTRBxD5Dkz3iiWaxIEibrPA=ZaaD/7h7DGaFa0BjsNQ8jrhsYY+mK6sPdF1orD0iCD=Fia0SL4+nWCpIHeQE=Bf7+YAhKBiXt/RR3GFWhYVKBQ4Oo3x5Ajn/xExZ+I5/oiVm3RstuNM7kbxqWdPRlxY6bpKeCPn+kYWhWb36nfRlLjqUSnxubbBeQ9A3bTawRt43R=FtnX5m+DnmCiE/QU3rTBxM+Y2/rOjEEhL0FPA3RLi2ldniDCXeSvT1P2jj+OnB8kP+i0uWo+6k0tAr5cAj8Bov665eox2KL=GKioPC3kG0roA5+IVQG50eVj56n2QaGN1Ax0UKC34CoXEvyevnCIKmpBlDPA5fYo=KAemUAiEH7=8io4lEvrYEAQUCIdaoCg4w0p5AqDQFxl9a7vQC4bfSy8Ii4nqzRHCA50GZQ0iU8xeD=; SHARESESSID=8b1527be4df94396ea080a042af133a0',
+  'Cookie': '_ga=GA1.1.291472793.1722583552; Hm_lvt_e23800c454aa573c0ccb16b52665ac26=1728461270,1728524930,1728552510,1728613936; HMACCOUNT=96154F56E9F24BFB; PHPSESSID=a9c352e5150740e5e24c9a1c54551a6c; SHARESESSID=a9c352e5150740e5e24c9a1c54551a6c; acw_tc=2760823117286340243065964eb77d126a0e0aa5ef76acb0b73077160b098c; acw_sc__v2=6708dca8ee29b75c3afae4b5c9875d8ac60d5c28; _ga_MJYFRXB3ZX=GS1.1.1728634025.43.1.1728634036.0.0.0; Hm_lpvt_e23800c454aa573c0ccb16b52665ac26=1728634037; ssxmod_itna=eq0xgDn7GQ0Q0=eDQDXDyx3qYK7tDODL6DBR0Bw5c0u4xG==Yb=UUNNWdK=fDl=DAK3DnqD8D8x0iDC+RreTRoOxioDx9L3XabzlT+6sUD8AvxoppnL+iDHxY=DUc7h3HWDenbD5xGoDPxDYDG4DoP5DnhxDjxDdxzA+dtYDbxi3i4GCX2rp74DF7eBzO4i7DDHrXx07CiAeDGveu3x4UGvd74DrXpoKL+7qSt0Dx4G1CD0HDpjexzfRQd2wS3Q2F9uzDlI9DC9++zBfwi7mQ8OtYnu4YirP6ixFqnixoQwd6XGdbl4enarq7D2I5x3A3tBDC5DG8DbYh=WP4D==; ssxmod_itna2=eq0xgDn7GQ0Q0=eDQDXDyx3qYK7tDODL6DBR0Bw5c0u4xG==Yb=UUNNWdK=D62LXDDsqKBb4GaKYqE=eDf2O0K=YCeidtsCC805KU80c95Y7Pn8qoYofpLcPdKCnplKqtTerRKkP/FLaScGsLCpbkcDzH60rdYhxv271yOPr5ZP4o/9rSrmexEHaWoabYOHHo2BGGzmA427k4o9Df+iiarMFyEv7LUFf4ODbtrcptxE7a8Cit=whO93pY0AaclpTXBmdvPqsqn0Hv/Ie+g+G/p0FZPgHX2yf3w9M4ZZa96/hX1/i6q5+x6DZAN1oPmlIzom+hISiNDgXarwfGIKPioQGADUw7f1E5TZ36nov7L3ox6iQ4/K51oTEE4QLd+R5BmgBfuGD2jG7h5KcLr926Doq9+Xid406LQ=+FGuDYdgKdhpc6opowGmjZoWZmPPaoeYYYPay6XobRO4XOfQ2pL3EfFIjxBrlDYuS5n35rKemAvPB4wfjqxtD9A=bf4xNCoaf2Y5Ao/097+n23wLiGyEoKigy=bB80kQKUo2xhX4Yoo0TT5PyZP4QolCj6WTLQx=3aP47VevP2bUoWS3HqO9dsp9iogmF5=m4oRtaR5mlPcferefPwwnjh7mLG667La7i8Of6aADcSBoovB5PIEOU4K7T6pmk+bfGuzEEC+95nL+yjhy9yTOemyesEImetWR4QT4440qD07lPOWinm7DPMaTYPRrsrh+Wlo1LrVg46ibeK00u1rQhY4PbYQjKxmmmT9RZ0+ERnm3kT8CofnoFPjIxBey2Z0DsAe0wDg8AKBbVxeN0Phhp4rIeGB4D48GeYDD=',
   'Pragma': 'no-cache',
   'Sec-Fetch-Dest': 'document',
   'Sec-Fetch-Mode': 'navigate',
@@ -47,27 +47,34 @@ headers= {
   'sec-ch-ua-mobile': '?0',
   'sec-ch-ua-platform': '"Windows"'
 }
-lists=[]
-for i in range(1,5):
-    res=requests.get(f'{url}{i}')
-    bs=BeautifulSoup(res.text,"html.parser")
-    listsss=bs.select(".container .title")
-    for i in listsss:
-        lists.append(base_url+i.get("href"))
+lists=['https://segmentfault.com/a/1190000006599500']
+# for i in range(1,5):
+#     res=requests.get(f'{url}{i}')
+#     bs=BeautifulSoup(res.text,"html.parser")
+#     listsss=bs.select(".container .title")
+#     for i in listsss:
+#         lists.append(base_url+i.get("href"))
+
 for new_url in lists:
     print(new_url)
     res=requests.get(new_url,headers=headers)
-    print(res.text)
     bs=BeautifulSoup(res.text,"html.parser")
     tag=bs.select("a.badge-tag")
     tag=[i.get_text() for i in tag] 
     title=bs.select_one(".h2 a.text-body").text.replace("|","").replace("?","").replace("/","")
+    for i in bs.find_all('pre'):
+        print(i)
+        start=bs.new_tag("p")
+        start.string = f"```js"
+        end=bs.new_tag("p")
+        end.string = "```"
+        i.insert_before(start)
+        i.insert_after(end)
     for i in bs.find_all('img'):
         i.decompose()
     for i in bs.find_all('script'):
         i.decompose()
     for i in bs.find_all('a'):
-        print(i)
         i["href"]=""
     # print(res.text)
     article=bs.select_one("article.article")
@@ -84,7 +91,5 @@ for new_url in lists:
     markdown = html2text.html2text(article.prettify())
     markdown=f"{info} # {title}\n"+markdown
     markdown=markdown.replace('<script async src=" [ https://static.codepen.io/ass... ]() ;></script>',"")
-    markdown=markdown.replace("<","&lt;")
-    markdown=markdown.replace(">","&gt;")
-    with open(f"D:/code/chen-blog/src/posts/other/{title}.md","w",encoding="utf-8") as f:
+    with open(f"test/{title}.md","w",encoding="utf-8") as f:
         f.write(markdown)
