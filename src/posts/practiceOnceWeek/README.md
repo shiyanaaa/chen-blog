@@ -1,5 +1,5 @@
 ---
-title: 文章
+title: 每周一练
 index: true
 icon: laptop-code
 category:

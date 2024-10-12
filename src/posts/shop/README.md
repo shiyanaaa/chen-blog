@@ -1,6 +1,6 @@
 ---
 title: 电商购物网站
-index: false
+index: true
 icon: laptop-code
 category:
   - 使用指南

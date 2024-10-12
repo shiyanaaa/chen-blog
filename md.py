@@ -91,5 +91,5 @@ for new_url in lists:
     markdown = html2text.html2text(article.prettify())
     markdown=f"{info} # {title}\n"+markdown
     markdown=markdown.replace('<script async src=" [ https://static.codepen.io/ass... ]() ;></script>',"")
-    with open(f"test/{title}.md","w",encoding="utf-8") as f:
+    with open(f"./src/posts/other/{title}.md","w",encoding="utf-8") as f:
         f.write(markdown)

@@ -1,5 +1,5 @@
 ---
-title: 文章
+title: Vue基础
 index: false
 icon: laptop-code
 category:

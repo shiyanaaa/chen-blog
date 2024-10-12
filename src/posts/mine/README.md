@@ -1,6 +1,6 @@
 ---
-title: 文章
-index: true
+title: 开发心得
+index: false
 icon: laptop-code
 category:
   - 使用指南
